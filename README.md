@@ -21,4 +21,6 @@ see wiki.ros.org for details
 World models are in Collada (.dae) format.
 They can be viewed with meshlab (sudo apt-get install meshlab) and edited with Blender.
 The ubuntu Blender does not support dae, so get Blender directly from 
-[the web page](https://www.blender.org/download/).
+[the web page](https://www.blender.org/download/).  World files are a pie of .dae for the mesh and .jpg for the texture (image) so you need both. 
+The installed models for ros can be found under /opt/ros/indigo/share
+

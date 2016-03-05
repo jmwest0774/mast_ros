@@ -10,7 +10,8 @@ cd ~/mast_ros
 catkin_make
 ```
 #Gazebo worlds
-Many exsisting worlds have been developed for ROS 
+Many exsisting worlds have been developed for ROS.  
+install gazebo_ros or hector demo to use their models
 #Quadcopter
 Ros has a package for generic quadcopters:
 ```

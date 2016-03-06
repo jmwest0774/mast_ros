@@ -26,6 +26,7 @@
 		 <arg name="name" value="swarmie" />
 	</include>
 
+	<node pkg="mast_data_link" type="mast_data_link_node" name="data_link"/>
   <!-- Start rviz visualization with preset config -->
 <!--
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_flight.rviz"/>

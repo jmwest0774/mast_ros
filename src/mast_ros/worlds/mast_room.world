@@ -192,36 +192,6 @@
         </visual>
       </link>
     </model>
-    <model name="one">
-      <static>true</static>
-      <link name="one_link">
-        <pose>0 0 1.0 0 0 0</pose>
-        <collision name="collision">
-          <geometry>
-            <cylinder>
-              <radius>0.25</radius>
-              <length>2</length>
-            </cylinder>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <cast_shadows>true</cast_shadows>
-          <geometry>
-            <cylinder>
-              <radius>0.25</radius>
-              <length>2</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-      </link>
-    </model>
     <model name="two">
       <static>true</static>
       <link name="two_link">
@@ -345,7 +315,7 @@
     <model name="box1">
       <static>true</static>
       <link name="box1_link">
-        <pose>-1.25 -3.75 0.5 0 0 0</pose>
+        <pose>-1.25 -1.875 0.5 0 0 0</pose>
         <collision name="collision">
           <geometry>
             <box>
@@ -373,7 +343,7 @@
     <model name="box2">
       <static>true</static>
       <link name="box2_link">
-        <pose>1.25 -3.75 0.5 0 0 0</pose>
+        <pose>1.25 -1.875 0.5 0 0 0</pose>
         <collision name="collision">
           <geometry>
             <box>

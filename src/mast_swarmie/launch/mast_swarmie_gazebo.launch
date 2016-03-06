@@ -2,10 +2,13 @@
 
 <launch>
   <arg name="name" default="swarmie"/>
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0.25"/>
 	<group ns="$(arg name)">
 	<param name="robotNamespace" value="$(arg name)"/>
 	<node name="spawn_robot" pkg="gazebo_ros" type="spawn_model"
-		args="-sdf -file $(find mast_swarmie)/models/mast_swarmie/model.sdf -model $(arg name) -x 1 -y 1 -z 0.5"/>
+		args="-sdf -file $(find mast_swarmie)/models/mast_swarmie/model.sdf -model $(arg name) -x $(arg x) -y $(arg y) -z $(arg z)"/>
 	<include file="$(find mast_swarmie)/launch/mast_swarmie.launch">
 		<arg name="name" value="$(arg name)"/>
 	</include>

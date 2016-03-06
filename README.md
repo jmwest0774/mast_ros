@@ -29,5 +29,8 @@ To launch an exsisting model
 ```
 roslaunch hector_gazebo_worlds rolling_hills_120m.launch
 ```
-or replace hector_gazebo_worlds with anouth package like gazebo_ros and change th elaunch file name
+or replace hector_gazebo_worlds with another package like gazebo_ros and change th elaunch file name
+#Quadrotor
+Currently use the hector UAV which is a distrubuted ROS package
+[here](http://wiki.asctec.de/display/AR/CAD+Models#CADModels-AscTecHummingbird) is a page with hummingbird moedl and data which we may try to integrate.
 

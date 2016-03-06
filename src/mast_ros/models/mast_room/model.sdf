@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="MAST demo room">
+    <static>true</static>
+
+<!-- Ground plane -->
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>100 100</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>100 100</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://media/materials/scripts</uri>
+            <uri>model://media/materials/textures</uri>
+            <name>CarparkGroundPlane/Image</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+	<!-- wall -->
+    <link name="link">
+      <inertial>
+	<mass>1.0</mass>
+	<inertia>
+	  <ixx>0.083</ixx>
+	  <ixy>0</ixy>
+	  <ixz>0</ixz>
+	  <iyy>0</iyy>
+	  <iyz>0</iyz>
+	  <izz>0.083</izz>
+	</inertia>
+	</inertial>
+
+     <collision name=’collision’>
+              <geometry>    
+          <box>
+	    <size>0.05 23.1 0.33</size>
+          </box>
+        </geometry>
+     <surface>
+              <friction>
+                <ode>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <slip1>0.0</slip1>
+                  <slip2>0.0</slip2>
+                </ode>
+              </friction>
+            </surface>
+
+            </collision>
+      <visual name="visual">
+        <geometry>
+           <box>
+	    <size>0.05 23.1 0.33</size>
+          </box>
+        </geometry>
+      </visual>
+     </link>
+  </model>
+</sdf>

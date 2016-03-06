@@ -497,6 +497,33 @@
             </axis>
         </joint>
 
+        <link name="cone_link">
+            <visual name='visual'>
+                <pose>0 0 0.185 0 0 0</pose>
+								<transparency>0.8</transparency>
+                <geometry>
+                    <mesh>
+                        <uri>model://meshes/cone.dae</uri>
+                    </mesh>
+                </geometry>
+                <material>
+                    <script>
+                        <name>Gazebo/Yellow</name>
+                    </script>
+                </material>
+            </visual>
+			</link>
+		<joint name="cone_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>cone_link</child>
+            <axis>
+                <xyz>0 0 0</xyz>
+                <limit>
+                    <upper>0</upper>
+                    <lower>0</lower>
+                </limit>
+            </axis>
+		</joint>
         <link name="camera_link">
             <visual name='visual'>
                 <pose>0.072 0 .185 0 0 1.5708</pose>

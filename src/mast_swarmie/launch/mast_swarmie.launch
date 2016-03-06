@@ -4,8 +4,10 @@
   <arg name="name" default="swarmie"/>
   <node name="MOBILITY" pkg="mobility" 
 		type="mobility" args="$(arg name)" />
+<!-- commented out ot save processing since not used 
   <node name="TARGET" pkg="target_detection"
 		 type="target" args="$(arg name)" />
+-->
   <node name="OBSTACLE" pkg="obstacle_detection"
 		 type="obstacle" args="$(arg name)" />
 

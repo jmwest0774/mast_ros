@@ -9,6 +9,10 @@
   <xacro:property name="room_length" value="15"/>
   <xacro:property name="wall_height" value="2"/>
   <xacro:property name="wall_thickness" value="0.1"/>
+  <xacro:property name="floor_color" value="0.6 0.4 0.2 0.0"/>
+  <xacro:property name="wall_color" value="0.0 0.0 0.1 0.0"/>
+  <xacro:property name="cylinder_color" value="0.5 0.0 0.0 0.0"/>
+  <xacro:property name="box_color" value="0.0 0.5 0.0 0.0"/>
     <scene>
       <ambient>0.5 0.5 0.5 1</ambient>
       <background>0.5 0.5 0.5 1</background>
@@ -70,11 +74,8 @@
             </plane>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${floor_color}</ambient>
+						<diffuse>${floor_color}</diffuse>
           </material>
         </visual>
       </link>
@@ -99,11 +100,32 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${wall_color}</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall1">
+      <static>true</static>
+      <link name="wall1_link">
+				<pose>${room_width/2} 0 ${wall_height/2} 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>${wall_thickness} ${room_length} ${wall_height}</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <cast_shadows>true</cast_shadows>
+          <geometry>
+            <box>
+              <size>${wall_thickness} ${room_length} ${wall_height}</size>
+            </box>
+          </geometry>
+          <material>
+						<ambient>${wall_color}</ambient>
           </material>
         </visual>
       </link>
@@ -127,11 +149,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${wall_color}</ambient>
           </material>
         </visual>
       </link>
@@ -155,11 +173,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${wall_color}</ambient>
           </material>
         </visual>
       </link>
@@ -183,11 +197,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${wall_color}</ambient>
           </material>
         </visual>
       </link>
@@ -214,11 +224,7 @@
             </cylinder>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${cylinder_color}</ambient>
           </material>
         </visual>
       </link>
@@ -248,11 +254,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+						<ambient>${box_color}</ambient>
           </material>
         </visual>
       </link>
@@ -260,7 +262,7 @@
 </xacro:macro>
 <xacro:draw_box name="box1"  x="${-room_width/8}" y="${-room_length/8}"
 	length="0.5" width="0.5" height="1"/>
-<xacro:draw_box name="box2"  x="${room_width/8}" y="${-room_length/8}"
+<xacro:draw_box name="box2"  x="${room_width/8}" y="${room_length/8}"
 	length="0.5" width="0.5" height="1"/>
   </world>
 </sdf>

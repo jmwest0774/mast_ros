@@ -70,11 +70,8 @@
             </plane>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.6 0.4 0.2 0.0</ambient>
+            <diffuse>0.6 0.4 0.2 0.0</diffuse>
           </material>
         </visual>
       </link>
@@ -99,11 +96,31 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.0 0.0 0.1 0.0</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="wall1">
+      <static>true</static>
+      <link name="wall1_link">
+        <pose>5.0 0 1.0 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 15 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <cast_shadows>true</cast_shadows>
+          <geometry>
+            <box>
+              <size>0.1 15 2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.1 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -127,11 +144,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.0 0.0 0.1 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -155,11 +168,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.0 0.0 0.1 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -183,11 +192,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.0 0.0 0.1 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -213,11 +218,7 @@
             </cylinder>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.5 0.0 0.0 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -243,11 +244,7 @@
             </cylinder>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.5 0.0 0.0 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -273,11 +270,7 @@
             </cylinder>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.5 0.0 0.0 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -303,11 +296,7 @@
             </cylinder>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.5 0.0 0.0 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -331,11 +320,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.0 0.5 0.0 0.0</ambient>
           </material>
         </visual>
       </link>
@@ -343,7 +328,7 @@
     <model name="box2">
       <static>true</static>
       <link name="box2_link">
-        <pose>1.25 -1.875 0.5 0 0 0</pose>
+        <pose>1.25 1.875 0.5 0 0 0</pose>
         <collision name="collision">
           <geometry>
             <box>
@@ -359,11 +344,7 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://media/materials/scripts</uri>
-              <uri>model://media/materials/textures</uri>
-              <name>CarparkGroundPlane/Image</name>
-            </script>
+            <ambient>0.0 0.5 0.0 0.0</ambient>
           </material>
         </visual>
       </link>

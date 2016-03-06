@@ -551,8 +551,8 @@
                     <alwaysOn>true</alwaysOn>
                     <updateRate>0.0</updateRate>
                     <cameraName>camera</cameraName>
-                    <imageTopicName>camera/image</imageTopicName>
-                    <cameraInfoTopicName>camera/info</cameraInfoTopicName>
+                    <imageTopicName>image</imageTopicName>
+                    <cameraInfoTopicName>info</cameraInfoTopicName>
                     <frameName>camera_link</frameName>
                     <hackBaseline>0.1</hackBaseline>
                     <distortionK1>.0</distortionK1>
@@ -566,7 +566,6 @@
 
         <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
             <updateRate>10</updateRate>
-            <robotNamespace>/</robotNamespace>
             <leftFrontJoint>left_front</leftFrontJoint>
             <rightFrontJoint>right_front</rightFrontJoint>
             <leftRearJoint>left_rear</leftRearJoint>

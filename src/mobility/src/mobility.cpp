@@ -104,22 +104,25 @@ int main(int argc, char **argv) {
     }
 
     // NoSignalHandler so we can catch SIGINT ourselves and shutdown the node
-    ros::init(argc, argv, (publishedName + "_MOBILITY"), ros::init_options::NoSigintHandler);
+    ros::init(argc, argv, "MOBILITY", ros::init_options::NoSigintHandler);
     ros::NodeHandle mNH;
 
     signal(SIGINT, sigintEventHandler); // Register the SIGINT event handler so the node can shutdown properly
 
-    joySubscriber = mNH.subscribe((publishedName + "/joystick"), 10, joyCmdHandler);
-    modeSubscriber = mNH.subscribe((publishedName + "/mode"), 1, modeHandler);
-    targetSubscriber = mNH.subscribe((publishedName + "/targets"), 10, targetHandler);
-    obstacleSubscriber = mNH.subscribe((publishedName + "/obstacle"), 10, obstacleHandler);
-    odometrySubscriber = mNH.subscribe((publishedName + "/odom/ekf"), 10, odometryHandler);
-    targetsCollectedSubscriber = mNH.subscribe(("targetsCollected"), 10, targetsCollectedHandler);
+    joySubscriber = mNH.subscribe("joystick", 10, joyCmdHandler);
+    modeSubscriber = mNH.subscribe("mode", 1, modeHandler);
+    targetSubscriber = mNH.subscribe("targets", 10, targetHandler);
+    obstacleSubscriber = mNH.subscribe("obstacle", 10, obstacleHandler);
+    odometrySubscriber = mNH.subscribe("odom/ekf", 10, odometryHandler);
+    targetsCollectedSubscriber = mNH.subscribe("/targetsCollected", 
+				10, targetsCollectedHandler);
 
-    status_publisher = mNH.advertise<std_msgs::String>((publishedName + "/status"), 1, true);
-    velocityPublish = mNH.advertise<geometry_msgs::Twist>((publishedName + "/velocity"), 10);
-    stateMachinePublish = mNH.advertise<std_msgs::String>((publishedName + "/state_machine"), 1, true);
-    targetCollectedPublish = mNH.advertise<std_msgs::Int16>(("targetsCollected"), 1, true);
+    status_publisher = mNH.advertise<std_msgs::String>("status", 1, true);
+    velocityPublish = mNH.advertise<geometry_msgs::Twist>("velocity", 10);
+    stateMachinePublish = mNH.advertise<std_msgs::String>("state_machine", 
+				1, true);
+    targetCollectedPublish = mNH.advertise<std_msgs::Int16>(
+				"/targetsCollected", 1, true);
 
     publish_status_timer = mNH.createTimer(ros::Duration(status_publish_interval), publishStatusTimerEventHandler);
     killSwitchTimer = mNH.createTimer(ros::Duration(killSwitchTimeout), killSwitchTimerEventHandler);

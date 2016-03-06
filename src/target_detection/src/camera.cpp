@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
     string hostname(host);
     string publishedName;
 
-    ros::init(argc, argv, (hostname + "_CAMERA"));
+    ros::init(argc, argv, "CAMERA");
 
     ros::NodeHandle tNH;
 

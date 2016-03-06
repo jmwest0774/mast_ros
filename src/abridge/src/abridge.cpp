@@ -77,13 +77,13 @@ int main(int argc, char **argv) {
         cout << "No Name Selected. Default is: " << publishedName << endl;
     }
     
-    imuPublish = aNH.advertise<sensor_msgs::Imu>((publishedName + "/imu"), 10);
-    odomPublish = aNH.advertise<nav_msgs::Odometry>((publishedName + "/odom"), 10);
-    sonarLeftPublish = aNH.advertise<sensor_msgs::Range>((publishedName + "/sonarLeft"), 10);
-    sonarCenterPublish = aNH.advertise<sensor_msgs::Range>((publishedName + "/sonarCenter"), 10);
-    sonarRightPublish = aNH.advertise<sensor_msgs::Range>((publishedName + "/sonarRight"), 10);
+    imuPublish = aNH.advertise<sensor_msgs::Imu>("imu", 10);
+    odomPublish = aNH.advertise<nav_msgs::Odometry>("odom", 10);
+    sonarLeftPublish = aNH.advertise<sensor_msgs::Range>("sonarLeft", 10);
+    sonarCenterPublish = aNH.advertise<sensor_msgs::Range>("sonarCenter", 10);
+    sonarRightPublish = aNH.advertise<sensor_msgs::Range>("sonarRight", 10);
     
-    velocitySubscriber = aNH.subscribe((publishedName + "/velocity"), 10, cmdHandler);
+    velocitySubscriber = aNH.subscribe("velocity", 10, cmdHandler);
     
     publishTimer = aNH.createTimer(ros::Duration(deltaTime), serialActivityTimer);
     

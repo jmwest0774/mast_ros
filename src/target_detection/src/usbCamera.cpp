@@ -19,7 +19,7 @@ USBCamera::USBCamera(int frameRate, int cameraIndex, string hostname):
         
         ros::Duration period = ros::Duration(1. / fps);
 
-        rawImgPublish = it.advertise((hostname + "/camera/image"), 2);
+        rawImgPublish = it.advertise("camera/image", 2);
 
         rosImage = boost::make_shared<cv_bridge::CvImage>();
         rosImage->encoding = sensor_msgs::image_encodings::BGR8;

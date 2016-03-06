@@ -11,8 +11,8 @@
   </include>
   
 	<!-- Spawn swarmie -->
-  <include file="$(find mast_swarmie)/launch/mast_swarmie.launch">
-		 <arg name="name" value="one" />
+  <include file="$(find mast_swarmie)/launch/mast_swarmie_gazebo.launch">
+		 <arg name="name" value="swarmie" />
 	</include>
 
   <!-- Start rviz visualization with preset config -->

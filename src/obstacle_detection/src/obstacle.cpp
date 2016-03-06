@@ -33,14 +33,17 @@ int main(int argc, char** argv) {
         cout << "No name selected. Default is: " << publishedName << endl;
     }
 
-    ros::init(argc, argv, (publishedName + "_OBSTACLE"));
+    ros::init(argc, argv, "OBSTACLE");
     ros::NodeHandle oNH;
     
-    obstaclePublish = oNH.advertise<std_msgs::UInt8>((publishedName + "/obstacle"), 10);
+    obstaclePublish = oNH.advertise<std_msgs::UInt8>("obstacle", 10);
     
-    message_filters::Subscriber<sensor_msgs::Range> sonarLeftSubscriber(oNH, (publishedName + "/sonarLeft"), 10);
-    message_filters::Subscriber<sensor_msgs::Range> sonarCenterSubscriber(oNH, (publishedName + "/sonarCenter"), 10);
-    message_filters::Subscriber<sensor_msgs::Range> sonarRightSubscriber(oNH, (publishedName + "/sonarRight"), 10);	
+    message_filters::Subscriber<sensor_msgs::Range> sonarLeftSubscriber(oNH, 
+			"sonarLeft", 10);
+    message_filters::Subscriber<sensor_msgs::Range> sonarCenterSubscriber(oNH,
+			"sonarCenter", 10);
+    message_filters::Subscriber<sensor_msgs::Range> sonarRightSubscriber(oNH,
+			"sonarRight", 10);	
     message_filters::TimeSynchronizer<sensor_msgs::Range, sensor_msgs::Range, sensor_msgs::Range> sonarSync(sonarLeftSubscriber, sonarCenterSubscriber, sonarRightSubscriber, 10);
 	sonarSync.registerCallback(boost::bind(&sonarHandler, _1, _2, _3));
 

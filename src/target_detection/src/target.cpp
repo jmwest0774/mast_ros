@@ -65,13 +65,14 @@ int main(int argc, char* argv[]) {
         publishedName = hostname;
         cout << "No Name Selected. Default is: " << publishedName << endl;
     }
-    ros::init(argc, argv, (publishedName + "_TARGET"));
+    ros::init(argc, argv, "TARGET");
     ros::NodeHandle tNH;
 
     image_transport::ImageTransport it(tNH);
-    image_transport::Subscriber imgSubscribe = it.subscribe((publishedName + "/camera/image"), 2, targetDetect);
+    image_transport::Subscriber imgSubscribe = it.subscribe("camera/image",
+			 2, targetDetect);
 
-    tagPublish = tNH.advertise<std_msgs::Int16>((publishedName + "/targets"), 2, true);
+    tagPublish = tNH.advertise<std_msgs::Int16>("/targets", 2, true);
 
     ros::spin();
 

@@ -6,10 +6,21 @@
   <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/>
    
   <!-- Spawn simulated quadrotor uav -->
+<arg name="uavName" value="uav"/>
+<group ns="$(arg uavName)">
   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >
     <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/> 
+		<arg name="name" value="$(arg uavName)"/> 
   </include>
-  
+
+  <!--  attach joystick to control uav.  
+	change /dev/input/js1 if on another port
+	change to xbox_controller.launch if using xbox -->
+	<include file="$(find hector_quadrotor_teleop)/launch/logitech_gamepad.launch">
+		<arg name="joy_dev" value="/dev/input/js1"/>
+		<remap from="/joy" to="/$(arg uavName)/joy"/>
+	</include>
+</group>
 	<!-- Spawn swarmie -->
   <include file="$(find mast_swarmie)/launch/mast_swarmie_gazebo.launch">
 		 <arg name="name" value="swarmie" />
